@@ -41,7 +41,7 @@ func (r *ElasticRepository) InsertMeow(ctx context.Context, meow schema.Meow) er
 	return err
 }
 
-func (r *ElasticRepository) SearchMeow(ctx context.Context, query string, skip uint64, take uint64) ([]schema.Meow, error) {
+func (r *ElasticRepository) SearchMeows(ctx context.Context, query string, skip uint64, take uint64) ([]schema.Meow, error) {
 	result, err := r.client.Search().
 		Index("meow").
 		Query(
